@@ -1,0 +1,17 @@
+.bgcolor{
+    background: white;
+    text-align: center;
+    margin-top: 50px;
+}
+.user_main
+{
+    background: white;
+
+}
+.user_main_list1,.user_main_list2
+{
+    width: 80%;
+    text-align: left;
+    margin: 0 auto;
+}
+
