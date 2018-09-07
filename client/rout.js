@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Index from './index';
 import Login from './pages/login';
+import List from './pages/list';
 import {Provider} from 'react-redux'
 import { applyMiddleware, createStore } from 'redux';
 import thunk from "redux-thunk";
@@ -17,7 +18,7 @@ class Selfindex extends React.Component{
       <Provider store={store}>
           <HashRouter>
             <Switch>
-                <Route   path="/" component={Index}></Route>
+                <Route exact  path="/list" component={List}></Route>
                 <Route  exact  path="/login" component={Login}></Route>
           </Switch>
         </HashRouter>

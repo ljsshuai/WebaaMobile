@@ -1,9 +1,9 @@
 var React = require('react')
 import 'antd/dist/antd.css';
-import '../public/css/login.scss';
 import { Form, Icon, Input, Button,Checkbox,message} from 'antd';
 const FormItem = Form.Item;
 import {connect} from 'react-redux';
+import HeaderTitle from "../component/headerTitle"
 import createHistory from 'history/createHashHistory';
 const history = createHistory();
 import {loginFn} from '../actions/index.redux'
@@ -44,9 +44,7 @@ class Login extends React.Component {
       // console.log(this.props)
       return (
         <div  className="loginform">
-            <div  className="loginTitle">
-                用户登录
-            </div>
+            <HeaderTitle headertitle="用户登录"/>
             <Form onSubmit={this.handleSubmit.bind(this)} className="login-form">
           <FormItem>
             {getFieldDecorator('loginName', {
