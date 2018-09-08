@@ -10,6 +10,7 @@ import reducers from './actions/reducers'
 import { HashRouter,Switch,Router, Route ,Redirect,BrowserRouter} from 'react-router-dom'
 const store = createStore(reducers,applyMiddleware(thunk));
 import createHistory from 'history/createBrowserHistory'
+import UserList from "./pages/userlist";
 const history = createHistory()
 const location = history.location
 class Selfindex extends React.Component{
@@ -18,8 +19,8 @@ class Selfindex extends React.Component{
       <Provider store={store}>
           <HashRouter>
             <Switch>
-                <Route exact  path="/list" component={List}></Route>
                 <Route  exact  path="/login" component={Login}></Route>
+                <Route  exact  path="/userlist" component={UserList}></Route>
           </Switch>
         </HashRouter>
      </Provider>
