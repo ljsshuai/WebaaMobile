@@ -1,8 +1,5 @@
-import Login from "./login";
 var React = require('react')
-import {List,NavBar,Icon,WingBlank,SearchBar,WhiteSpace,Picker} from 'antd-mobile';
-const Item = List.Item;
-import {Switch,Route} from 'react-router-dom'
+import {NavBar,Icon,WingBlank,SearchBar,WhiteSpace,Picker} from 'antd-mobile';
 import '../public/css/userlist.css';
 import EditPassword from "./editPassword";
 class UserList extends React.Component {
