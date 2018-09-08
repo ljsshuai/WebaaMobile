@@ -1,6 +1,8 @@
 var React = require('react')
-import {NavBar,Icon,WingBlank,SearchBar,WhiteSpace,Picker} from 'antd-mobile';
+import {List,NavBar,Icon,WingBlank,SearchBar,WhiteSpace,Picker} from 'antd-mobile';
 import '../public/css/userlist.css';
+const Item=List.Item;
+import {Route} from "react-router-dom";
 import EditPassword from "./editPassword";
 class UserList extends React.Component {
     constructor(props){
@@ -14,7 +16,6 @@ class UserList extends React.Component {
         }
     }
     render(){
-        console.log(this.props.match.url)
         return(
             <div>
                 <NavBar

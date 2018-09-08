@@ -3,16 +3,14 @@ import {SearchBar,NavBar} from 'antd-mobile';
 import MangerHeader from './manger_header';
 import '../public/css/managerlist.css';
 class MangerList extends React.Component{
-    constructor(){
-        super();
-        this.state={
-
-        };
+    constructor(props){
+        super(props);
     }
     render(){
+        console.log(this.props)
         return(
             <div>
-                <MangerHeader/>
+                <MangerHeader  url="/"/>
                     <SearchBar showCancelButton  placeholder="请输入ID(五位数字)"/>
                 <div >
                     <ul className='daohang'>

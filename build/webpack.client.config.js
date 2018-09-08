@@ -198,7 +198,7 @@ const config= {
         //     }
         // }
     },
-    devtool:'cheap-source-map',
+    // devtool:'cheap-source-map',
     plugins: [
         // new webpack.LoaderOptionsPlugin({
         //     // test: /\.xxx$/, // may apply this only for some modules
