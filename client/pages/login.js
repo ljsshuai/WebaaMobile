@@ -1,5 +1,5 @@
 var React = require('react')
-import 'antd/dist/antd.css';
+// import 'antd/dist/antd.css';
 import { Form, Icon, Input, Button,Checkbox,message} from 'antd';
 const FormItem = Form.Item;
 import {connect} from 'react-redux';

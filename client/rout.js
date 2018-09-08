@@ -43,10 +43,21 @@ class Selfindex extends React.Component{
     )
   }
 }
-  ReactDOM.render(
-  <Selfindex />,
-  document.getElementById('example')
-  )
+
+
+if (module.hot) {
+    module.hot.accept(() => {
+        ReactDOM.render(
+            <Selfindex />,
+            document.getElementById('example')
+        )
+    })
+}
+
+ReactDOM.render(
+    <Selfindex />,
+    document.getElementById('example')
+)
 
   // <Route   path="/" component={Index}>
 
