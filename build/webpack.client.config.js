@@ -3,11 +3,15 @@ const webpack =require ('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin'); //自动生成html文件的插件
 const CleanWebpackPlugin = require('clean-webpack-plugin'); //清除之前打包的文件
 // const UglifyJSPlugin = require('uglifyjs-webpack-plugin');// 压缩混淆JS文件
-const ExtractTextPlugin = require('extract-text-webpack-plugin');//指定CSS为单独文件
+const ExtractTextPlugin = require('extract-text-webpack-plugin');//指定CSS为单独文件  //webpack 4.0 热更新用不了
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 var ImageminPlugin = require('imagemin-webpack-plugin').default; //图片进行压缩处理
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const ManifestPlugin = require('webpack-manifest-plugin'); //生成静态文件JSON 服务端渲染使用
 const isDev = process.env.NODE_ENV === 'development';
+const HappyPack = require('happypack');
+const os = require('os')
+  const  happyThreadPool = HappyPack.ThreadPool({ size: os.cpus().length });
 // var entryJSON=require('../src/config/page.json')
 // const extractCSS = new ExtractTextPlugin('../dist/stylesheets/one.css');  // 第二种指定CSS单独文件路径名称方法
 
@@ -43,8 +47,8 @@ const config= {
     }, //指定入口文件，程序从这里开始编译,__dirname当前所在目录, ../表示上一级目录, ./同级目录
     output: {
         path: path.resolve(__dirname, '../dist/client'), // 输出的路径
-        filename: 'js/[name].[hash:8].js',  // 打包后文件
-        chunkFilename: 'js/[name].[hash:8].js',
+        filename: 'js/[name].js',  // 打包后文件
+        chunkFilename: 'js/[name].js',
         publicPath:'/public/'
     },
     module: {
@@ -55,32 +59,56 @@ const config= {
             // },
             {
                 test: /\.(js|jsx)$/,
+
                 use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['es2015', 'react','stage-1'],
-                        plugins: ['transform-decorators-legacy','transform-decorators']
-                    }
+                    // loader: 'babel-loader',
+                    loader: 'happypack/loader?id=babel',
+                    // options: {
+                    //     presets: ['es2015', 'react','stage-1'],
+                    //     plugins: ['transform-decorators-legacy','transform-decorators',"react-hot-loader/babel"]
+                    // }
                 },
                 exclude: /node_modules/
             },
             {
                 test: /\.(css|scss)$/,
-                use: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    use: [
-                        {
-                            loader:'css-loader',
-                            options: {
-                                minimize: false
-                            }
-                            // root: path.resolve(__dirname, '../src/static'),   // url里，以 / 开头的路径，去找src/static文件夹
+                use:[
+                    'css-hot-loader',
+                    MiniCssExtractPlugin.loader,
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            minimize: !isDev, //压缩
+                        },
+                    },
+                    {
+                        loader: 'postcss-loader', options: {
+                            ident: 'postcss',
+                            plugins: (loader) => [
+                                require('autoprefixer')(),
+                            ]
                         }
-                        ,'sass-loader'
-                    ],
-                    publicPath: '../'
-                })
-                ,
+                    },
+                     'sass-loader'
+                ]
+
+
+                //
+                //     ExtractTextPlugin.extract({
+                //     fallback: 'style-loader',
+                //     use: [
+                //         {
+                //             loader:'css-loader',
+                //             options: {
+                //                 minimize: false
+                //             }
+                //             // root: path.resolve(__dirname, '../src/static'),   // url里，以 / 开头的路径，去找src/static文件夹
+                //         }
+                //         ,'sass-loader'
+                //     ],
+                //     publicPath: '../'
+                // })
+                // ,
                 // exclude: /node_modules/,
 
                 //引入antd的样式不要默认排除，后续还要引入到模块中
@@ -170,20 +198,28 @@ const config= {
         //     }
         // }
     },
-
+    devtool:'cheap-source-map',
     plugins: [
-        new webpack.LoaderOptionsPlugin({
-            // test: /\.xxx$/, // may apply this only for some modules
-            options: {
-                'ejs-compiled-loader': {
-                    'htmlmin': true, // or enable here
-                    'htmlminOptions': {
-                        removeComments: true
-                    }
-                },
-            }
+        // new webpack.LoaderOptionsPlugin({
+        //     // test: /\.xxx$/, // may apply this only for some modules
+        //     options: {
+        //         'ejs-compiled-loader': {
+        //             'htmlmin': true, // or enable here
+        //             'htmlminOptions': {
+        //                 removeComments: true
+        //             }
+        //         },
+        //     }
+        // }),
+        // new ExtractTextPlugin("css/[name].css"),
+        new MiniCssExtractPlugin({
+            // Options similar to the same options in webpackOptions.output
+            // both options are optional
+            filename: "css/[name].css",
+            // chunkFilename: "css/[id].css"
         }),
-        new ExtractTextPlugin("css/[name].[hash:8].css"),
+
+
         new ManifestPlugin({
             fileName: 'ssr-asset-manifest.json', //服务端渲染样式文件
         }),
@@ -196,18 +232,19 @@ const config= {
         new webpack.DefinePlugin({ "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV) }),
         new ImageminPlugin({
             test: /\.(jpe?g|png|gif|svg)$/i ,
-            // externalImages: {
-            //     context: './images/ys', // Important! This tells the plugin where to "base" the paths at
-            //     // sources: glob.sync('src/images/**/*.png'),
-            //     // destination: 'src/public/images'
-            // },
-            // test: 'images/ys/*.png',
+
             disable: process.env.NODE_ENV === 'development', // Disable during development
             pngquant: {
                 quality: '90'
             },
         }),
-
+        new HappyPack({
+            //多线程运行 默认是电脑核数-1
+            id: 'babel', //对于loaders id
+            loaders: ['cache-loader', 'babel-loader?cacheDirectory'], //是用babel-loader解析
+            threadPool: happyThreadPool,
+            verboseWhenProfiling: true, //显示信息
+        }),
         // new webpack.ProvidePlugin({     //直接从module库中  引入到各个文件中一起压缩导入。当你某个模块有使用
         //     $: 'jquery', //下载Jquery
         // }),
@@ -247,6 +284,8 @@ if (isDev) {
     }
     config.devServer = {
         host: '0.0.0.0',
+        inline:true,
+        hotOnly:true,
         compress: true,
         port: 9000,
         contentBase: path.join(__dirname, "../dist/client"),
@@ -258,6 +297,7 @@ if (isDev) {
         historyApiFallback: {
             index: '/public/index.html'
         },
+        // historyApiFallback: true, //不会出现404页面，避免找不到
         // proxy: {
         //     '/api': 'http://localhost:3333'
         // }
