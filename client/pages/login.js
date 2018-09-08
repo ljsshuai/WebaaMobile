@@ -1,5 +1,5 @@
 var React = require('react')
-// import 'antd/dist/antd.css';
+import 'antd/dist/antd.css';
 import { Form, Icon, Input, Button,Checkbox,message} from 'antd';
 const FormItem = Form.Item;
 import {connect} from 'react-redux';
@@ -50,14 +50,14 @@ class Login extends React.Component {
             {getFieldDecorator('loginName', {
               rules: [{ required: true, message: '请输入用户名!' }],
             })(
-              <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="用户名" />
+              <Input size="large" prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="用户名" />
             )}
           </FormItem>
           <FormItem>
             {getFieldDecorator('password', {
               rules: [{ required: true, message: '请输入密码!' }],
             })(
-              <Input prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" placeholder="密码" placeholder="" />
+              <Input size="large" prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" placeholder="密码" placeholder="" />
             )}
           </FormItem>
                 <FormItem>
@@ -71,7 +71,7 @@ class Login extends React.Component {
                 </FormItem>
           <FormItem>
               <div style={{textAlign:'center'}}>
-                  <Button type="primary" loading={this.state.loading} htmlType="submit" className="login-form-button">
+                  <Button size="large" type="primary" loading={this.state.loading} htmlType="submit" className="login-form-button">
                       登录
                   </Button>
               </div>

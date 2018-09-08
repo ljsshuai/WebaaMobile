@@ -6,7 +6,8 @@
 .user_main
 {
     background: white;
-
+    padding:20px 5%;
+    font-size: 17px;
 }
 .user_main_list1,.user_main_list2
 {
@@ -14,4 +15,16 @@
     text-align: left;
     margin: 0 auto;
 }
-
+.listTitle{
+    font-size: 17px;
+}
+.user_main_right{
+    float: right;
+}
+.user_main_list1{
+    margin-bottom: 10px;
+    font-size: 17px;
+}
+.am-list-header{
+    text-align: center;
+}
