@@ -14,4 +14,13 @@
     text-align: left;
     margin: 0 auto;
 }
+.user_main_right
+{
+    display: inline-block;
+    margin-left: 30%;
+}
+.passworld
+{
+    margin-top: 50px;
 
+}

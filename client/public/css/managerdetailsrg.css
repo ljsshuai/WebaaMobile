@@ -1,0 +1,31 @@
+.input
+{
+    font-size: 17px;
+}
+table {
+    margin: auto;
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+td {
+    border-bottom: 1px solid #ccc;
+}
+tr
+{
+    height: 40px;
+}
+select{
+    width: 100%;
+    text-align: center;
+    text-align-last: center;
+}
+option
+{
+    text-align: center;
+    text-align-last: center;
+}
+input
+{
+    width: 100%;
+}

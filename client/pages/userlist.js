@@ -1,6 +1,7 @@
 var React = require('react')
-import {NavBar,Icon,WingBlank,SearchBar,WhiteSpace,Picker} from 'antd-mobile';
+import {NavBar,Icon,WingBlank,SearchBar,WhiteSpace,Picker,List} from 'antd-mobile';
 import '../public/css/userlist.css';
+
 class UserList extends React.Component {
         static defaultProps = {
             accounts : 'shjj99',
@@ -9,6 +10,8 @@ class UserList extends React.Component {
         };
 
     render(){
+        const Item = List.Item;
+        const Brief = Item.Brief;
         return(
             <div>
                 <NavBar
@@ -21,13 +24,18 @@ class UserList extends React.Component {
                     <div className="user_main_list1">账号：{this.props.accounts} <div className="user_main_right"> ID:{this.props.id}</div></div>
                     <div className="user_main_list2">积分：{this.props.intergral}</div>
                 </div>
-                <div>
-
-
+                <div className='passworld'>
+                    <List  className="my-list">
+                        <Item arrow="horizontal" multipleLine onClick={() => {}}>
+                           修改密码
+                        </Item>
+                    </List>
                 </div>
                 <div className='bgcolor'>
-                    <WingBlank><div className="sub-title">通过手机号码查询账号</div></WingBlank>
-                    <SearchBar  placeholder="Search" maxLength={8} />
+                    <WingBlank><div className="sub-title">通过手机号码查询</div></WingBlank>
+                    <SearchBar
+                        showCancelButton
+                    />
                 </div>
             </div>
         )
