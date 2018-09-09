@@ -4,10 +4,10 @@ import {Icon, Modal, Popover, List, SearchBar, NavBar, Button} from 'antd-mobile
 const PopItem = Popover.Item;
 const alert = Modal.alert;
 const Item = List.Item;
-import MangerHeader from './manger_header';
+import AdminHeader from './adminHeader';
 import '../public/css/managerlist.css';
 
-class MangerList extends React.Component {
+class Adminlist_ extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -44,14 +44,14 @@ class MangerList extends React.Component {
                 },
             ])
         } else {
-            this.props.history.push("/manger/" + opt.props.value);
+            this.props.history.push("/adminlist/" + opt.props.value);
         }
     };
 
     render() {
         return (
             <div>
-                <MangerHeader url="/"/>
+                <AdminHeader url="/"/>
                 <SearchBar showCancelButton placeholder="请输入ID(五位数字)"/>
                 <div>
                     <ul className='daohang'>
@@ -84,64 +84,11 @@ class MangerList extends React.Component {
                                              overlayStyle={{color: 'currentColor'}}
                                              visible={this.state.visible1}
                                              overlay={[
-                                                 (<PopItem key="42" value="mangerecharge"
-                                                           data-seed="logId">充值</PopItem>),
-                                                 (<PopItem key="53" value="mangerbalance"
-                                                           style={{whiteSpace: 'nowrap'}}>强制结算</PopItem>),
-                                                 (<PopItem key="14" value="mangerdetails"
+                                                 (<PopItem key="14" value="admin_details"
                                                            style={{whiteSpace: 'nowrap'}}>详细资料</PopItem>),
                                                  (<PopItem key="25" value="DelUser"
                                                            style={{whiteSpace: 'nowrap'}}>删除用户</PopItem>),
-                                                 (<PopItem key="66" value="mangerrepassworld">
-                                                     <span style={{marginRight: 5}}>重置密码</span>
-                                                 </PopItem>),
-                                             ]}
-                                             align={{
-                                                 overflow: {adjustY: 0, adjustX: 0},
-                                                 offset: [-10, 0],
-                                             }}
-                                             onVisibleChange={this.handleVisibleChange.bind(this)}
-                                             onSelect={this.onSelect.bind(this)}
-                                         >
-                                        <div
-                                        >
-                                            <Icon type="ellipsis"/>
-                                        </div>
-                                    </Popover>
-                                </div>
-                            </div>
-                        </div>
-                    </Item>
-                    <Item>
-                        <div className="listContent">
-                            <div>
-                                <div>
-                                    aa
-                                </div>
-                                <div>
-                                    aa
-                                </div>
-                                <div>
-                                    aa
-                                </div>
-                                <div>
-                                    aa
-                                </div>
-                                <div>
-                                    <Popover mask
-                                             overlayClassName="fortest"
-                                             overlayStyle={{color: 'currentColor'}}
-                                             visible={this.state.visible}
-                                             overlay={[
-                                                 (<PopItem key="4" value="mangerecharge"
-                                                           data-seed="logId">充值</PopItem>),
-                                                 (<PopItem key="5" value="mangerbalance"
-                                                           style={{whiteSpace: 'nowrap'}}>强制结算</PopItem>),
-                                                 (<PopItem key="1" value="mangerdetails"
-                                                           style={{whiteSpace: 'nowrap'}}>详细资料</PopItem>),
-                                                 (<PopItem key="2" value="DelUser"
-                                                           style={{whiteSpace: 'nowrap'}}>删除用户</PopItem>),
-                                                 (<PopItem key="6" value="mangerrepassworld">
+                                                 (<PopItem key="66" value="adminRepassworld">
                                                      <span style={{marginRight: 5}}>重置密码</span>
                                                  </PopItem>),
                                              ]}
@@ -161,6 +108,7 @@ class MangerList extends React.Component {
                             </div>
                         </div>
                     </Item>
+
                 </List>
 
 
@@ -169,4 +117,4 @@ class MangerList extends React.Component {
     };
 }
 
-export default MangerList;
+export default Adminlist_;

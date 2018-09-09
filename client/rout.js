@@ -11,6 +11,8 @@ import { HashRouter,Switch,Router, Route ,Redirect,BrowserRouter} from 'react-ro
 const store = createStore(reducers,applyMiddleware(thunk));
 import createHistory from 'history/createBrowserHistory'
 import UserList from "./pages/userlist";
+import Adminlist from "./pages/adminlist";
+
 import Manger from "./pages/mager";
 const history = createHistory()
 const location = history.location
@@ -22,6 +24,7 @@ class Selfindex extends React.Component{
             <Switch>
                 <Route  exact  path="/login" component={Login}></Route>
                 <Route    path="/userlist" component={UserList}></Route>
+                <Route    path="/adminlist" component={Adminlist}></Route>
                 <Route    path="/manger" component={Manger}></Route>
                 <Route  exact  path="/list" component={List}></Route>
           </Switch>
