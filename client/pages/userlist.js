@@ -28,7 +28,7 @@ class UserList extends React.Component {
                     <div className="user_main_list2">积分：{this.state.user.intergral}</div>
                 </div>
                     <List renderHeader={() => ''} className="editpassword">
-                        <Item arrow="horizontal" onClick={()=>{this.props.history.push(`${this.props.match.url}/editPassword`)}}>修dd改密码</Item>
+                        <Item arrow="horizontal" onClick={()=>{this.props.history.push(`${this.props.match.url}/editPassword`)}}>修改密码</Item>
                     </List>
                 <List   renderHeader={() => '通过手机号码查询账号'} className="listTitle">
                     <Item >
