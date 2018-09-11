@@ -13,6 +13,7 @@ import RefereeDetails from './manage_referee_details'
 import AccountAdd from './account_manage_add'
 import RefereeRecharge from './mange_referee_recharge'
 import PlotterManageAdd from './plotter_manage_add'
+import AccountManage from "./manage_account_manage";
 const userRoutes = ({ match }) => (
     <div>
         <Route exact path={`${match.url}/`} component={MangerList} />
@@ -28,6 +29,7 @@ const userRoutes = ({ match }) => (
         <Route exact path={`${match.url}/refereerecharge`} component={RefereeRecharge}/>
         <Route exact path={`${match.url}/accountadd`} component={AccountAdd}/>
         <Route exact path={`${match.url}/plotteradd`} component={PlotterManageAdd}/>
+
     </div>
 );
 
