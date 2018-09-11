@@ -55,7 +55,7 @@ class IndexList extends React.Component {
                 </List>
                 <List renderHeader={() => ''} className="my-list">
                     <Item arrow="horizontal" onClick={() => {this.props.history.push("/accounts")}}>账目表</Item>
-                    <Item arrow="horizontal" onClick={() => {}}>设置</Item>
+                    <Item arrow="horizontal" onClick={() => {this.props.history.push("/setup")}}>设置</Item>
                 </List>
                 <List renderHeader={() => ''} className="my-list">
                     <Item arrow="horizontal" onClick={() => {}}>玩家信息</Item>
