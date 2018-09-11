@@ -12,7 +12,7 @@ class AdminHeader extends React.Component{
                     mode="dark"
                     icon={<Icon type="left" />}
                     onLeftClick={()=>{this.props.url?this.props.history.push("/list"):this.props.history.push("/adminlist")}}
-                >经理管理</NavBar>
+                >管理员管理</NavBar>
             </div>
         );
     };
