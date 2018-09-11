@@ -1,19 +1,27 @@
 import React from 'react';
 import {  Route } from 'react-router-dom'
-import MangereCharge from "./manager_recharge";
-import ManagerDetails from "./manager_details";
-import ManagerDetailsRg from "./manager_details_rg";
+import AccountsAll from "./accountsAll";
 import AccountsList from "./accountsList";
-import ManagerBalance from "./manager_balance";
-import ManagerRepsd from "./manage_repsd";
+import Paylist from "./paylist";
+import AdminPaylist from "./adminPaylist";
+import AdminPayDh from "./adminPayDh";
+import AdminPayJt from "./adminPayJt";
+import Referrer from "./accountsReferrer";
+import Referrerlogs from "./Referrerlogs";
+import JtGamers from "./JtGamers";
+
 const accountsRoutes = ({ match }) => (
     <div>
         <Route exact path={`${match.url}/`} component={AccountsList} />
-        <Route exact path={`${match.url}/mangerecharge`} component={MangereCharge} />
-        <Route exact path={`${match.url}/mangerbalance`} component={ManagerBalance} />
-        <Route exact path={`${match.url}/mangerrepassworld`} component={ManagerRepsd} />
-        <Route exact path={`${match.url}/mangerdetails`} component={ManagerDetails} />
-        <Route exact path={`${match.url}/mangerdetailsrg`} component={ManagerDetailsRg} />
+        <Route exact path={`${match.url}/accountsAll`} component={AccountsAll} />
+        <Route exact path={`${match.url}/paylist`} component={Paylist} />
+        <Route exact path={`${match.url}/adminpaylist`} component={AdminPaylist} />
+        <Route exact path={`${match.url}/adminPayDh`} component={AdminPayDh} />
+        <Route exact path={`${match.url}/adminPayJt`} component={AdminPayJt} />
+        <Route exact path={`${match.url}/Referrer`} component={Referrer} />
+        <Route exact path={`${match.url}/Referrerlogs`} component={Referrerlogs} />
+        <Route exact path={`${match.url}/JtGamers`} component={JtGamers} />
+
     </div>
 );
 

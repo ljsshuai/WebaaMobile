@@ -5,7 +5,7 @@ const FormItem = Form.Item;
 const Item = List.Item;
 const Option = Select.Option;
 import AccountsHeader from './accountsHeader';
-import '../public/css/addManager.scss';
+import '../public/css/accounts.scss';
 class AccountsAll extends React.Component {
     constructor(props){
         super(props);
@@ -42,10 +42,9 @@ class AccountsAll extends React.Component {
     render(){
         const formItemLayout = {
             labelCol: {
-                span:5
+                span:7
             },
             wrapperCol: {
-                offset:1,
                 span:17
             },
         };
@@ -65,129 +64,86 @@ class AccountsAll extends React.Component {
 
         return(
             <div>
-                <AccountsHeader/>
-                <div>
-                    <FormItem   {...formItemLayout}  label="类型"  >
-                        <Select defaultValue="充值" >
-                            <Option value="cz">充值</Option>
-                            <Option value="dy">兑换</Option>
-                            <Option value="jt" >机台</Option>
-                        </Select>
-                    </FormItem>
+                <AccountsHeader title="账目表"/>
+                <div className="accountsTitSeclect">
+                    <div>
+                            <span>类型选择</span>
+                            <Select defaultValue="xsxm" className="accountsSelect" >
+                                <Option value="xsxm">线上项目</Option>
+                                <Option value="jtxm">机台项目</Option>
+                            </Select>
+                    </div>
+                    <div>
+                        <span>房间选择</span>
+                        <Select defaultValue="xsxm" className="accountsSelect" >
+                                <Option value="xsxm">所有总账</Option>
+                                <Option value="jtxm">房间一</Option>
+                                 <Option value="jtxm">房间n</Option>
+                            </Select>
+                    </div>
                 </div>
-                <List className="my-list">
-                    <Form onSubmit={this.handleSubmit.bind(this)} className="addManager-form" >
+                <div className="listContentTitle">
+                    P-W
+                </div>
+                <List  renderHeader={() => ''} className="my-list">
                         <Item>
-                            <FormItem   {...formItemLayout}  label="类型"  >
-                                <Select defaultValue="充值" >
-                                    <Option value="cz">充值</Option>
-                                    <Option value="dy">兑换</Option>
-                                    <Option value="jt" >机台</Option>
-                                </Select>
-                            </FormItem>
-                        </Item>
-                        <Item>
-                            <FormItem  {...formItemLayout} label="账户名">
-                                {getFieldDecorator('apassword', {
-                                    rules: [{ hasFeedback:false,required: true, message: '请输入密码!' }],
-                                })(
-                                    <Input size="default"  type="password" placeholder="账户名"  />
-                                )}
-                            </FormItem>
-                        </Item>
-                        <Item>
-                            <FormItem  {...formItemLayout} label="密码">
-                                {getFieldDecorator('password', {
-                                    rules: [{ required: true, message: '请输入密码!' }],
-                                })(
-                                    <Input size="default"  type="password" placeholder="密码"  />
-                                )}
-                            </FormItem>
-                        </Item>
-                        <Item>
-                            <FormItem  {...formItemLayout} label="备注">
-                                {getFieldDecorator('password', {
-                                    rules: [{ required: true, message: '请输入密码!' }],
-                                })(
-                                    <Input size="default"  type="password" placeholder="备注"  />
-                                )}
-                            </FormItem>
-                        </Item>
-                        <Item>
-                            <FormItem  {...formItemLayout} label="姓名">
-                                <Input size="default"  type="password" placeholder="姓名"  />
-                            </FormItem>
-                        </Item>
-                        <Item>
-                            <FormItem  {...formItemLayout} label="性别">
-                                <Select defaultValue="男" >
-                                    <Option value="cz">男</Option>
-                                    <Option value="dy">女</Option>
-                                </Select>
-                            </FormItem>
-                        </Item>
-                        <Item>
-                            <FormItem  {...formItemLayout} label="身份证">
-                                <Input size="default"  type="password" placeholder="身份证"  />
-                            </FormItem>
-                        </Item>
-                        <Item>
-                            <FormItem  {...formItemLayout} label="手机号1">
-                                {getFieldDecorator('password', {
-                                    rules: [{ required: true, message: '请输入密码!' }],
-                                })(
-                                    <Input size="default"  type="password" placeholder="手机号1"  />
-                                )}
-                            </FormItem>
-                        </Item>
-                        <Item>
-                            <FormItem  {...formItemLayout} label="手机号2">
-                                {getFieldDecorator('password', {
-                                    rules: [{ required: true, message: '请输入密码!' }],
-                                })(
-                                    <Input size="default"  type="password" placeholder="手机号2"  />
-                                )}
-                            </FormItem>
-                        </Item>
-                        <Item>
-                            <FormItem  {...formItemLayout} label="微信号">
-                                {getFieldDecorator('password', {
-                                    rules: [{ required: true, message: '请输入密码!' }],
-                                })(
-                                    <Input size="default"  type="password" placeholder="微信号"  />
-                                )}
-                            </FormItem>
-                        </Item>
-                        <Item>
-                            <FormItem  {...formItemLayout} label="QQ号">
-                                {getFieldDecorator('password', {
-                                    rules: [{ required: true, message: '请输入密码!' }],
-                                })(
-                                    <Input size="default"  type="password" placeholder="QQ号"  />
-                                )}
-                            </FormItem>
-                        </Item>
-                        <Item>
-                            <FormItem  {...formItemLayout} label="住址">
-                                {getFieldDecorator('password', {
-                                    rules: [{ required: true, message: '请输入密码!' }],
-                                })(
-                                    <Input size="default"  type="password" placeholder="住址" />
-
-                                )}
-                            </FormItem>
-                        </Item>
-                        <Item>
-                            <TextareaItem style={{fontSize:'14px'}} value="(*为必填，其余信息可在详细资料进行完善)" disabled/>
-                        </Item>
-                        <FormItem>
-                            <div style={{textAlign:'center'}}>
-                                <Button size="large"  type="primary" loading={this.state.loading} htmlType="submit" className="login-form-button">
-                                    提交
-                                </Button>
+                            <div className="listItem">
+                                <span>P</span>
+                                <i>405465</i>
                             </div>
-                        </FormItem>
-                    </Form>
+                        </Item>
+                </List>
+                <List  renderHeader={() => ''} className="my-list">
+                    <Item>
+                        <div className="listItem">
+                            <span>W</span>
+                            <i>405566465</i>
+                        </div>
+                    </Item>
+                </List>
+                <div className="listContentTitle" style={{  marginTop:'24px'
+                }}>
+                    总账
+                </div>
+                <List  renderHeader={() => ''} className="my-list">
+                    <Item>
+                        <div className="listItem">
+                            <span>玩家总充值</span>
+                            <i>405465</i>
+                        </div>
+                    </Item>
+                </List>
+                <List  renderHeader={() => ''} className="my-list">
+                    <Item>
+                        <div className="listItem">
+                            <span>玩家总台面积分</span>
+                            <i>405566465</i>
+                        </div>
+                    </Item>
+                </List>
+                <List  renderHeader={() => ''} className="my-list">
+                    <Item>
+                        <div className="listItem">
+                            <span>系统送分</span>
+                            <i>405566465</i>
+                        </div>
+                    </Item>
+                </List>
+                <List  renderHeader={() => ''} className="my-list">
+                    <Item>
+                        <div className="listItem">
+                            <span>玩家总兑换</span>
+                            <i>405566465</i>
+                        </div>
+                    </Item>
+                </List>
+                <List  renderHeader={() => ''} className="my-list">
+                    <Item>
+                        <div className="listItem">
+                            <span>总和</span>
+                            <i>405566465</i>
+                        </div>
+                    </Item>
                 </List>
             </div>
         )
