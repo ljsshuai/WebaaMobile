@@ -49,9 +49,9 @@ class IndexList extends React.Component {
                 <List renderHeader={() => ''} className="my-list">
                     <Item arrow="horizontal" onClick={()=>{this.props.history.push("/manger")}}>经理管理</Item>
                     <Item arrow="horizontal" onClick={() =>{this.props.history.push("/adminlist")}}>管理员管理</Item>
-                    <Item arrow="horizontal" onClick={() => {}}>推荐人管理</Item>
-                    <Item arrow="horizontal" onClick={() => {}}>机台管理</Item>
-                    <Item arrow="horizontal" onClick={() => {}}>打印机管理</Item>
+                    <Item arrow="horizontal" onClick={() => {this.props.history.push("/managerreferee")}}>推荐人管理</Item>
+                    <Item arrow="horizontal" onClick={() => {this.props.history.push("/accountmanage")}}>机台管理</Item>
+                    <Item arrow="horizontal" onClick={() => {this.props.history.push("/managerstatus")}}>打印机管理</Item>
                 </List>
                 <List renderHeader={() => ''} className="my-list">
                     <Item arrow="horizontal" onClick={() => {this.props.history.push("/accounts")}}>账目表</Item>

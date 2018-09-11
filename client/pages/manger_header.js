@@ -1,7 +1,9 @@
+import ManagerReferee from "./manager_referee";
+
 var React = require('react')
 import {NavBar,Icon,Button} from 'antd-mobile';
 import {Link,  Redirect,withRouter  } from 'react-router-dom'
-class MangerHeader extends React.Component{
+class RefereeHeader extends React.Component{
     constructor(props){
         super(props);
     }
@@ -18,5 +20,5 @@ class MangerHeader extends React.Component{
         );
     };
 }
-MangerHeader=withRouter(MangerHeader);
-export default MangerHeader;
+RefereeHeader=withRouter(RefereeHeader);
+export default RefereeHeader;

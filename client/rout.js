@@ -13,7 +13,6 @@ import createHistory from 'history/createBrowserHistory'
 import UserList from "./pages/userlist";
 import Adminlist from "./pages/adminlist";
 
-import Accounts from "./pages/accounts";
 import Manger from "./pages/mager";
 const history = createHistory()
 const location = history.location
@@ -27,7 +26,6 @@ class Selfindex extends React.Component{
                 <Route    path="/userlist" component={UserList}></Route>
                 <Route    path="/adminlist" component={Adminlist}></Route>
                 <Route    path="/manger" component={Manger}></Route>
-                <Route    path="/accounts" component={Accounts}></Route>
                 <Route  exact  path="/list" component={List}></Route>
           </Switch>
         </HashRouter>
