@@ -3,12 +3,12 @@ import { List ,Button,WingBlank} from 'antd-mobile';
 
 const Item = List.Item;
 const Brief = Item.Brief;
-import HeaderTitle from "../component/headerTitle"
+import AccountsHeader from "./accountsHeader"
 import {connect} from 'react-redux';
 import createHistory from 'history/createHashHistory';
 const history = createHistory();
 import {loginFn} from '../actions/index.redux'
-class IndexList extends React.Component {
+class AccountsList extends React.Component {
     constructor(...args){
         super(...args);
         this.state={
@@ -42,28 +42,26 @@ class IndexList extends React.Component {
     render() {
         return (
             <div>
-                <HeaderTitle headertitle="General Manager"/>
+                <AccountsHeader url="/"/>
                 <List renderHeader={() => ''} className="my-list">
-                    <Item arrow="horizontal" onClick={()=>{this.props.history.push("/userlist")}}>个人信息</Item>
+                    <Item arrow="horizontal" onClick={()=>{this.props.history.push("/accountsAll")}}>总账</Item>
                 </List>
                 <List renderHeader={() => ''} className="my-list">
-                    <Item arrow="horizontal" onClick={()=>{this.props.history.push("/manger")}}>经理管理</Item>
-                    <Item arrow="horizontal" onClick={() =>{this.props.history.push("/adminlist")}}>管理员管理</Item>
-                    <Item arrow="horizontal" onClick={() => {this.props.history.push("/managerreferee")}}>推荐人管理</Item>
-                    <Item arrow="horizontal" onClick={() => {this.props.history.push("/accountmanage")}}>机台管理</Item>
-                    <Item arrow="horizontal" onClick={() => {this.props.history.push("/managerstatus")}}>打印机管理</Item>
+                    <Item arrow="horizontal" onClick={()=>{this.props.history.push("/manger")}}>经理</Item>
+                    <Item arrow="horizontal" onClick={() =>{this.props.history.push("/adminlist")}}>管理员</Item>
+                    <Item arrow="horizontal" onClick={() => {}}>推荐人</Item>
+                    <Item arrow="horizontal" onClick={() => {}}>推荐人兑换记录</Item>
+                    <Item arrow="horizontal" onClick={() => {}}>机台玩家</Item>
                 </List>
                 <List renderHeader={() => ''} className="my-list">
-                    <Item arrow="horizontal" onClick={() => {this.props.history.push("/accounts")}}>账目表</Item>
-                    <Item arrow="horizontal" onClick={() => {}}>设置</Item>
+                    <Item arrow="horizontal" onClick={() => {}}>结算账单</Item>
                 </List>
                 <List renderHeader={() => ''} className="my-list">
                     <Item arrow="horizontal" onClick={() => {}}>玩家信息</Item>
                 </List>
-                <WingBlank className="indexList" style={{marginTop:20,padding:5}}>
-                    <Button  size="large" type="primary">退出登录</Button>
-
-                </WingBlank>
+                <List renderHeader={() => ''} className="my-list">
+                    <Item arrow="horizontal" onClick={() => {}}>查询历史账目</Item>
+                </List>
             </div>
         );
     }
@@ -74,6 +72,6 @@ const mapStatetoProps=(state=>{
     return {state}
 });
 const actionCreators={loginFn}
-IndexList=connect(mapStatetoProps,actionCreators)(IndexList)
+AccountsList=connect(mapStatetoProps,actionCreators)(AccountsList)
 
-export default IndexList ;
+export default AccountsList ;

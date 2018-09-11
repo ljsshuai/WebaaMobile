@@ -12,11 +12,8 @@ const store = createStore(reducers,applyMiddleware(thunk));
 import createHistory from 'history/createBrowserHistory'
 import UserList from "./pages/userlist";
 import Adminlist from "./pages/adminlist";
-import ManagerReferee from'./pages/manager_referee';
-import AccountManage from './pages/manage_account_manage';
+
 import Manger from "./pages/mager";
-import AccountMore from "./pages/account_manage_more";
-import ManagerStatus from "./pages/plotter_manager_status";
 const history = createHistory()
 const location = history.location
 class Selfindex extends React.Component{
@@ -29,10 +26,6 @@ class Selfindex extends React.Component{
                 <Route    path="/userlist" component={UserList}></Route>
                 <Route    path="/adminlist" component={Adminlist}></Route>
                 <Route    path="/manger" component={Manger}></Route>
-                <Route    path="/managerreferee" component={ManagerReferee}></Route>
-                <Route exact path="/accountmore" component={AccountMore} />
-                <Route    path="/accountmanage" component={AccountManage}></Route>
-                <Route path="/managerstatus" component={ManagerStatus}> </Route>
                 <Route  exact  path="/list" component={List}></Route>
           </Switch>
         </HashRouter>
