@@ -148,15 +148,15 @@ render() {
                                              overlayStyle={{color: 'currentColor'}}
                                              visible={this.state.visible}
                                              overlay={[
-                                                 (<PopItem key="4" value="mangerecharge"
+                                                 (<PopItem key="42" value="refereeLimit"
                                                            data-seed="logId">兑换限额</PopItem>),
-                                                 (<PopItem key="5" value="mangerbalance"
+                                                 (<PopItem key="53" value="refereepeople"
                                                            style={{whiteSpace: 'nowrap'}}>推荐玩家</PopItem>),
-                                                 (<PopItem key="1" value="mangerdetails"
+                                                 (<PopItem key="14" value="refereedetails"
                                                            style={{whiteSpace: 'nowrap'}}>详细资料</PopItem>),
-                                                 (<PopItem key="2" value="DelUser"
+                                                 (<PopItem key="25" value="DelUser"
                                                            style={{whiteSpace: 'nowrap'}}>删除用户</PopItem>),
-                                                 (<PopItem key="6" value="mangerrepassworld">
+                                                 (<PopItem key="66" value="refereerecharge">
                                                      <span style={{marginRight: 5}}>充值</span>
                                                  </PopItem>),
                                              ]}

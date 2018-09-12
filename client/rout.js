@@ -35,7 +35,7 @@ class Selfindex extends React.Component{
                 <Route path="/accountmanage" component={AccountManage}/>
                 <Route path="/managerstatus" component={ManagerStatus}/>
                 <Route  path="/accountmore" component={account_manage_more}/>
-                <Route path={"/setup"} component={SetUpRoutes}/>
+                <Route path="/setup" component={SetUpRoutes}/>
                 <Route  exact  path="/list" component={List}></Route>
           </Switch>
         </HashRouter>
