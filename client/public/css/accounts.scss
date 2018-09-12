@@ -209,13 +209,182 @@
   }
 
 }
-
+.JtGamersLi{
+  overflow: scroll;
+}
 .JtGamersFooter{
+  padding:5px 0 0 0;
+  background: #108ee9;
+
+  li:first-child{
+    height: auto;
+    line-height: normal;
+  }
   li{
     width: 25%;
     padding:10px 0;
   }
+  ul:first-child{
+    background: #87cff7;
+  }
+  ul{
+    border-top:1px solid #594779 ;
+  }
+  ul:last-child{
+    background: #ffffff;
+  }
   position: fixed;
   bottom: 0;
   width: 100%;
+}
+.accountsBill{
+  background: #e8e8e8;
+  .ant-form-item{
+    margin-bottom: 0;
+  }
+  .ant-form-item-label{
+    text-align: right;
+    padding-right: 10px;
+  }
+  .login-form-button{
+    //width: 100%;
+  }
+}
+$borderColor:#594779;
+
+.getGamer{
+  .ant-radio-wrapper{
+    margin-right: 0;
+  }
+  border-bottom: 1px solid $borderColor;
+}
+.garmerDetails{
+  background: #e8e8e8;
+  ul,li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background: #ffffff;
+  }
+  li{
+    border-top: 1px solid $borderColor;
+    text-align: center;
+    display: flex;
+    >div{
+      display: inline-block;
+      padding: 8px;
+      border-right: 1px solid $borderColor;
+    }
+    >div:first-child{
+      width: 35%;
+      border-left: 1px solid $borderColor;
+    }
+    >div:last-child{
+      width: 65%;
+    }
+  }
+  li:last-child{
+    border-top: 1px solid $borderColor;
+    border-bottom: 1px solid $borderColor;
+  }
+  padding: 20px 25px;
+  box-sizing: border-box;
+}
+.logsContentTitle{
+  ul:after{
+    display: block;
+    content: '';
+    clear: both;
+  }
+  ul,li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background: #ffffff;
+  }
+  li{
+    background: #60b4f9;
+    padding:8px 0;
+    float: left;
+    text-align: center;
+    border-right: 1px solid $borderColor;
+    border-bottom: 1px solid $borderColor;
+  }
+  li:first-child{
+    width: 18%;
+  }
+  li:nth-child(2){
+    width: 25%;
+  }
+  li:nth-child(3){
+    width: 32%;
+  }
+  li:nth-child(4){
+    width: 25%;
+  }
+  li:last-child{
+    border-right: 0;
+  }
+}
+.logsContent{
+  overflow: scroll;
+  ul:after{
+    display: block;
+    content: '';
+    clear: both;
+  }
+  ul,li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background: #ffffff;
+  }
+  >ul>li {
+
+    li{
+      background: #ffffff;
+      width: 25%;
+      padding:8px 0;
+      float: left;
+      text-align: center;
+      border-right: 1px solid $borderColor;
+      border-bottom: 1px solid $borderColor;
+    }
+    li:first-child{
+      width: 18%;
+    }
+    li:nth-child(2){
+      width: 25%;
+    }
+    li:nth-child(3){
+      width: 32%;
+    }
+    li:nth-child(4){
+      width: 25%;
+    }
+  }
+>ul>li li:last-child{
+  border-right: 0;
+}
+}
+
+.loginLogsTitle{
+  li{
+    width: 50% !important;
+  }
+}
+.loginLogs{
+  >ul>li li{
+    width: 50% !important;
+  }
+}
+.HistoryBillTitle{
+  li{
+    width: 33.333333% !important;
+  }
+}
+.HistoryBill{
+  >ul>li li{
+    width: 33.333333% !important;
+  }
 }

@@ -64,14 +64,17 @@ class AccountsList extends React.Component {
                     <Item arrow="horizontal"  onClick={()=>{this.props.history.push(parentUrl+"/JtGamers")}}>机台玩家</Item>
                 </List>
                 <List renderHeader={() => ''} className="my-list">
-                    <Item arrow="horizontal" onClick={() => {}}>结算账单</Item>
+                    <Item arrow="horizontal" onClick={()=>{this.props.history.push(parentUrl+"/accountsBill")}}>结算账单</Item>
+
+
                 </List>
                 <List renderHeader={() => ''} className="my-list">
-                    <Item arrow="horizontal" onClick={() => {}}>玩家信息</Item>
+                    <Item arrow="horizontal"  onClick={()=>{this.props.history.push(parentUrl+"/GetGamer")}}>玩家信息</Item>
                 </List>
                 <List renderHeader={() => ''} className="my-list">
-                    <Item arrow="horizontal" onClick={() => {}}>查询历史账目</Item>
+                    <Item arrow="horizontal" onClick={()=>{this.props.history.push(parentUrl+"/HistoryBill")}}>查询历史账目</Item>
                 </List>
+
             </div>
         );
     }
