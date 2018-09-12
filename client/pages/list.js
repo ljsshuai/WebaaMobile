@@ -58,11 +58,10 @@ class IndexList extends React.Component {
                     <Item arrow="horizontal" onClick={() => {this.props.history.push("/setup")}}>设置</Item>
                 </List>
                 <List renderHeader={() => ''} className="my-list">
-                    <Item arrow="horizontal" onClick={() => {}}>玩家信息</Item>
+                    <Item arrow="horizontal"  onClick={() => {this.props.history.push("/accounts/GetGamer")}}>玩家信息</Item>
                 </List>
                 <WingBlank className="indexList" style={{marginTop:20,padding:5}}>
-                    <Button  size="large" type="primary">退出登录</Button>
-
+                    <Button  size="large" onClick={() => {this.props.history.push("/login")}} type="primary">退出登录</Button>
                 </WingBlank>
             </div>
         );

@@ -27,14 +27,15 @@ class Login extends React.Component {
             .getFieldsValue();
           if(!err){
             this.setState({loading:true});
-              this.props.loginFn(values).then(data=>{
-                  message.info(data.msg);
-                  if(data.status==='ok'){
-                  history.push('/index');
-                  }else{
-                      this.setState({loading:false});
-                  }
-              })
+              history.push('/list');
+              // this.props.loginFn(values).then(data=>{
+              //     message.info(data.msg);
+              //     if(data.status==='ok'){
+              //     history.push('/index');
+              //     }else{
+              //         this.setState({loading:false});
+              //     }
+              // })
           }
         });
     }
