@@ -1,6 +1,6 @@
 var React = require('react')
-import { List ,Button,WingBlank} from 'antd-mobile';
-
+import { List ,WingBlank} from 'antd-mobile';
+import {Button} from 'antd';
 const Item = List.Item;
 const Brief = Item.Brief;
 import HeaderTitle from "../component/headerTitle"
@@ -61,7 +61,7 @@ class IndexList extends React.Component {
                     <Item arrow="horizontal"  onClick={() => {this.props.history.push("/accounts/GetGamer")}}>玩家信息</Item>
                 </List>
                 <WingBlank className="indexList" style={{marginTop:20,padding:5}}>
-                    <Button  size="large" onClick={() => {this.props.history.push("/login")}} type="primary">退出登录</Button>
+                    <Button size="large" style={{width:"100%"}}  type="primary" onClick={() => {this.props.history.push("/login")}} type="primary">退出登录</Button>
                 </WingBlank>
             </div>
         );

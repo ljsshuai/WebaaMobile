@@ -87,7 +87,7 @@ class Referrerlogs extends React.Component {
                         </li>
                     </ul>
                 </div>
-                <List  renderHeader={() => ''} className="my-list payContentlist ReferrerLogs">
+                <List   className="my-list payContentlist ReferrerLogs">
                     <Item>
                         <ul>
                             <li>

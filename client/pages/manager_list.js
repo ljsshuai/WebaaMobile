@@ -37,10 +37,6 @@ class MangerList extends React.Component {
                     text: '确定',
                     onPress: () => {
                     }
-                    // new Promise((resolve) => {
-                    //     Toast.info('onPress Promise', 1);
-                    //     setTimeout(resolve, 1000);
-                    // }),
                 },
             ])
         } else {

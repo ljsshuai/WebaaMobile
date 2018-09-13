@@ -29,7 +29,7 @@
   height:40px;
   box-sizing: border-box;
   padding: 8px;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   background: #ccc;
 }
@@ -386,5 +386,10 @@ $borderColor:#594779;
 .HistoryBill{
   >ul>li li{
     width: 33.333333% !important;
+  }
+}
+.accountsParent{
+  .am-list-item .am-list-line .am-list-content{
+    font-size: 15px !important;
   }
 }

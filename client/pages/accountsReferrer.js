@@ -1,6 +1,8 @@
+
 var React = require('react')
-import {List,SearchBar,Button} from 'antd-mobile';
+import {Modal,List,SearchBar,Button} from 'antd-mobile';
 import { Form,message} from 'antd';
+const alert = Modal.alert;
 const Item = List.Item;
 import AccountsHeader from './accountsHeader';
 import '../public/css/accounts.scss';
@@ -37,6 +39,23 @@ class Referrer extends React.Component {
             }
         });
     }
+    onClickDel(opt) {
+
+        // if (opt.props.value === 'DelUser') {
+        //     console.log(opt.props)
+        alert('账目清零', '确认账目清零？', [
+            {text: '取消', onPress: () => console.log('cancel')},
+            {
+                text: '确定',
+                onPress: () => {
+                }
+            },
+        ])
+        // } else {
+        //     this.props.history.push("/manger/" + opt.props.value);
+        // }
+    };
+
     render(){
         const formItemLayout = {
             labelCol: {
@@ -92,57 +111,10 @@ class Referrer extends React.Component {
                                 794450
                             </li>
                             <li>
-                                <Button type="primary"    className="listBtn" inline size="small"  >清除结算</Button>
+                                <Button type="primary"  onClick={this.onClickDel.bind(this)}  className="listBtn" inline size="small"  >清除结算</Button>
                             </li>
                         </ul>
                     </Item>
-                    <Item>
-                        <ul>
-                            <li>
-                                充值经理
-                            </li>
-                            <li>
-                                7000900
-                            </li>
-                            <li>
-                                794450
-                            </li>
-                            <li>
-                                <Button type="primary"    className="listBtn" inline size="small"  >清除结算</Button>
-                            </li>
-                        </ul>
-                    </Item>        <Item>
-                    <ul>
-                        <li>
-                            充值经理
-                        </li>
-                        <li>
-                            7000900
-                        </li>
-                        <li>
-                            794450
-                        </li>
-                        <li>
-                            <Button type="primary"    className="listBtn" inline size="small"  >清除结算</Button>
-                        </li>
-                    </ul>
-                </Item>        <Item>
-                    <ul>
-                        <li>
-                            充值经理
-                        </li>
-                        <li>
-                            7000900
-                        </li>
-                        <li>
-                            794450
-                        </li>
-                        <li>
-                            <Button type="primary"    className="listBtn" inline size="small"  >清除结算</Button>
-                        </li>
-                    </ul>
-                </Item>
-
                 </List>
             </div>
         )

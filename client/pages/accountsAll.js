@@ -63,7 +63,7 @@ class AccountsAll extends React.Component {
         const { getFieldDecorator } = this.props.form;
 
         return(
-            <div>
+            <div className="accountsParent">
                 <AccountsHeader title="账目表"/>
                 <div className="accountsTitSeclect">
                     <div>

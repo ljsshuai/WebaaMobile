@@ -19,6 +19,8 @@ import AccountManage from "./pages/manage_account_manage";
 import ManagerStatus from "./pages/plotter_manager_status";
 import account_manage_more from "./pages/account_manage_more";
 import SetUpRoutes from "./pages/setup/admin_setup";
+import Accounts from "./pages/accounts";
+
 const history = createHistory()
 const location = history.location
 class Selfindex extends React.Component{

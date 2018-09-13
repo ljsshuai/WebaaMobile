@@ -6,7 +6,8 @@ import {connect} from 'react-redux';
 import HeaderTitle from "../component/headerTitle"
 import createHistory from 'history/createHashHistory';
 const history = createHistory();
-import {loginFn} from '../actions/index.redux'
+import {loginFn} from '../actions/index.redux';
+
 class Login extends React.Component {
     constructor(...args){
       super(...args);
@@ -61,15 +62,30 @@ class Login extends React.Component {
               <Input size="large" prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" placeholder="密码" placeholder="" />
             )}
           </FormItem>
-                <FormItem>
-                    {getFieldDecorator('remember', {
-                        valuePropName: 'checked',
-                        initialValue: true,
-                    })(
-                        <Checkbox>Remember me</Checkbox>
-                    )}
-                    <a className="login-form-forgot" href="">Forgot password</a>
-                </FormItem>
+                <div className="loginCheckbox">
+                    <div>
+                        <FormItem>
+                            {getFieldDecorator('remember', {
+                                valuePropName: 'checked',
+                                initialValue: true,
+                            })(
+                                <Checkbox>推荐人</Checkbox>
+                            )}
+                        </FormItem>
+                    </div>
+                    <div>
+                        <FormItem>
+                            {getFieldDecorator('remember1', {
+                                valuePropName: 'checked',
+                                initialValue: true,
+                            })(
+                                <Checkbox>记住密码</Checkbox>
+                            )}
+                        </FormItem>
+                    </div>
+                </div>
+
+
           <FormItem>
               <div style={{textAlign:'center'}}>
                   <Button size="large" type="primary" loading={this.state.loading} htmlType="submit" className="login-form-button">

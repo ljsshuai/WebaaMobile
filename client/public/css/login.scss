@@ -37,8 +37,15 @@
     border-color: #1890ff;
     font-weight: 400;
     padding:12px 0;
-    font-size: 20px;
+    font-size: 17px;
     color: #ffffff;
     //background:
 }
+.loginCheckbox{
+    >div{
+        width: 50%;
+        display: inline-block;
+    }
+}
+
 
