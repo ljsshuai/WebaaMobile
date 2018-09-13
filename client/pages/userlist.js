@@ -31,7 +31,7 @@ class UserList extends React.Component {
                         <Item arrow="horizontal" onClick={()=>{this.props.history.push(`${this.props.match.url}/editPassword`)}}>修改密码</Item>
                     </List>
                 <List   renderHeader={() => '通过手机号码查询账号'} className="listTitle">
-                    <Item >
+                    <Item>
                         <SearchBar  placeholder="Search" maxLength={8} />
                     </Item>
                 </List>

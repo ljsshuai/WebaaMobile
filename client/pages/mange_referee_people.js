@@ -14,6 +14,7 @@ class RefereePeople extends React.Component {
             visible: false,
             selected: '',
             visible1:false
+
         }
     }
 

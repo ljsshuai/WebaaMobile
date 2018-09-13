@@ -28,10 +28,10 @@ class setUpList extends React.Component {
                     onLeftClick={()=>{this.props.history.push("/list")}}
                 >设置</NavBar>
                 <List>
-                    <Item arrow="horizontal" onClick={()=>{this.props.history.push(`${this.props.match.url}/`)}}>难度设置</Item>
+                    <Item arrow="horizontal" >难度设置</Item>
                 </List>
                 <List>
-                    <Item arrow="horizontal" onClick={()=>{this.props.history.push(`${this.props.match.url}/roomsetting`)}}>游戏设置</Item>
+                    <Item arrow="horizontal" >游戏设置</Item>
                 </List>
                 <List>
                     <Item arrow="horizontal" onClick={()=>{this.props.history.push(`${this.props.match.url}/roomsetting`)}}>房间设置</Item>

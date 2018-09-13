@@ -63,10 +63,9 @@ class RoomSetting extends React.Component {
             },
         };
         const { getFieldDecorator } = this.props.form;
-
         return(
             <div>
-                <div style={{ position:'fixed',top:'0px',zIndex:'1',width:'100%',left:'0'}}>
+                <div style={{ position:'fixed',top:'0px',zIndex:'888',width:'100%',left:'0'}}>
                 <SetupHeader/>
                 <List className="my-list">
                     <Form onSubmit={this.handleSubmit.bind(this)} className="addManager-form" >
@@ -227,7 +226,7 @@ class RoomSetting extends React.Component {
                                 <Input size="default"  type="text" placeholder='线上限制红.....'  />
                             </FormItem>
                         </Item>
-                            <div style={{textAlign:'center',position:'fixed',bottom:'0',width:'100%'}}>
+                            <div style={{textAlign:'center',position:'fixed',bottom:'0',width:'100%',zIndex:'888'}}>
                                 <Button size="large"  type="primary" loading={this.state.loading} htmlType="submit" className="login-form-button">
                                     确认
                                 </Button>
