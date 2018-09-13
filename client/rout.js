@@ -29,7 +29,7 @@ class Selfindex extends React.Component{
       <Provider store={store}>
           <HashRouter>
             <Switch>
-                <Route  exact  path="/login" component={Login}></Route>
+                <Route  exact  path="/" component={Login}></Route>
                 <Route    path="/userlist" component={UserList}></Route>
                 <Route    path="/adminlist" component={Adminlist}></Route>
                 <Route    path="/manger" component={Manger}></Route>
