@@ -1,6 +1,6 @@
 var React = require('react');
-import {Modal, Popover, List, Button, InputItem} from 'antd-mobile';
-import {Form, Icon, Input, Checkbox, message,} from 'antd';
+import {Modal, Popover, List,InputItem} from 'antd-mobile';
+import {Form, Icon, Input, Button, Checkbox, message,} from 'antd';
 
 const PopItem = Popover.Item;
 const alert = Modal.alert;
@@ -56,7 +56,7 @@ class AccountMore extends React.Component {
         return (
             <div>
                 <List>
-                    <AccountManageHeader url="/"/>
+                    <AccountManageHeader />
                     <Form onSubmit={this.handleSubmit.bind(this)} style={{padding:'0px'}}>
                         <Item><FormItem style={{marginBottom:'0px'}}  {...formItemLayout} label="账号">
                             11111111111
@@ -92,15 +92,18 @@ class AccountMore extends React.Component {
                         </Item>
                         <FormItem>
                             <div style={{textAlign: 'center'}}>
-
-                                <Button size="small" type="primary" loading={this.state.loading} htmlType="submit"
-                                        className="login-form-button" style={{marginTop: '10px'}}>
+                                 <div>
+                                <Button size="large" type="primary" loading={this.state.loading} htmlType="submit"
+                                        className="login-form-button" style={{marginTop: '10px',width:'100%'}}>
                                     确定
                                 </Button>
-                                <Button size="small" type="warning" style={{marginTop: '10px'}}>删除</Button>
+                                 </div>
+                                <div>
+                                <Button size="large" type="warning" style={{marginTop: '10px',width:'100%'}}>删除</Button>
+                                </div>
 
-                                <Button size="small" type="primary" loading={this.state.loading} htmlType="submit"
-                                        className="login-form-button" style={{marginTop: '10px'}}>
+                                <Button size="large" type="primary" loading={this.state.loading} htmlType="submit"
+                                        className="login-form-button" style={{marginTop: '10px',width:'100%'}}>
                                     取消
                                 </Button>
                             </div>

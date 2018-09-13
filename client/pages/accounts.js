@@ -26,8 +26,6 @@ const accountsRoutes = ({ match }) => (
         <Route exact path={`${match.url}/accountsBill`} component={AccountsBill} />
         <Route exact path={`${match.url}/getGamer`} component={GetGamer} />
         <Route exact path={`${match.url}/HistoryBill`} component={HistoryBill} />
-
-
     </div>
 );
 

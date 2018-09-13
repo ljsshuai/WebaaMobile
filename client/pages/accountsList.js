@@ -41,7 +41,7 @@ class AccountsList extends React.Component {
         });
     }
     render() {
-        const parentUrl=this.props.match.url
+        const parentUrl=this.props.match.url;
         return (
             <div>
                 <AccountsHeader url="/" />

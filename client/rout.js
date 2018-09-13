@@ -15,7 +15,7 @@ import Adminlist from "./pages/adminlist";
 
 import Manger from "./pages/mager";
 import MangerReferee from "./pages/manager_referee";
-import AccountManage from "./pages/manage_account_manage";
+import AccountRoutes from "./pages/manage_account_manage";
 import ManagerStatus from "./pages/plotter_manager_status";
 import account_manage_more from "./pages/account_manage_more";
 import SetUpRoutes from "./pages/setup/admin_setup";
@@ -34,7 +34,7 @@ class Selfindex extends React.Component{
                 <Route    path="/adminlist" component={Adminlist}></Route>
                 <Route    path="/manger" component={Manger}></Route>
                 <Route path="/managerreferee" component={MangerReferee}/>
-                <Route path="/accountmanage" component={AccountManage}/>
+                <Route path="/accountmanage" component={AccountRoutes}/>
                 <Route path="/managerstatus" component={ManagerStatus}/>
                 <Route  path="/accountmore" component={account_manage_more}/>
                 <Route path="/setup" component={SetUpRoutes}/>

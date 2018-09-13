@@ -1,11 +1,17 @@
+import RoomSetting from "./setup/room_setting";
+
 var React = require('react');
 import {Icon, Modal, Popover, List, SearchBar, NavBar, Button} from 'antd-mobile';
-
+import {Route} from "react-router-dom";
 const PopItem = Popover.Item;
 const alert = Modal.alert;
 const Item = List.Item;
 import AccountManageHeader from './account_manage_header';
 import '../public/css/accountmanage.css';
+import AccountMore from './account_manage_more';
+import BroadcastSetting from "./setup/broadcast_setting";
+import GameStart from "./setup/gamestart";
+import PlayerSeal from "./setup/PlayerSeal";
 
 class AccountManage extends React.Component {
     constructor(props) {
@@ -60,7 +66,7 @@ class AccountManage extends React.Component {
                     </ul>
                 </div>
                 <List>
-                    <Item  arrow="horizontal" onClick={() => {this.props.history.push("/accountmore")}}><div  className="accountDiv">
+                    <Item  arrow="horizontal" onClick={() => {this.props.history.push(`${this.props.match.url}/accountmore`)}}><div  className="accountDiv">
                         <div>123</div><div>456</div><div>789</div>
                     </div></Item>
                     <Item  arrow="horizontal" onClick={() => {}}><div  className="accountDiv">
@@ -71,5 +77,10 @@ class AccountManage extends React.Component {
         );
     };
 }
-
-export default AccountManage;
+const AccountRoutes = ({ match }) => (
+    <div>
+        <Route exact path={`${match.url}/accountmore`} component={AccountMore} />
+        <Route exact path={`${match.url}/`} component={AccountManage} />
+    </div>
+);
+export default AccountRoutes;

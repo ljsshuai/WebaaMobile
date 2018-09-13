@@ -104,8 +104,6 @@ class RefereePeople extends React.Component {
                         </div>
                     </Item>
                 </List>
-
-
             </div>
         );
     };
