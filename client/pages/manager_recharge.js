@@ -18,20 +18,22 @@ class MangereCharge extends React.Component{
     }
 
     tenoClick(e,es){
-        const Number =this.state.money+parseInt(e.target.attributes['number'].value);
+        const Number =parseInt(e.target.attributes['number'].value);
         console.log( es,e.target.attributes['number'].value,this.props);
         this.props.form.setFieldsValue({
             inputValue:this.state.money+Number
         })
         this.setState(
-            {money: Number }
+            {money:this.state.money+Number}
         );
     }
     cleanClick(){
-       this.setState(
-           {money:0}
-       )
-        console.log(money);
+        this.setState(
+            {money:0}
+        );
+        this.props.form.setFieldsValue({
+            inputValue:this.state.money
+        });
     }
     render(){
         const { getFieldDecorator } = this.props.form;
