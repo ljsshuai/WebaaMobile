@@ -2,7 +2,6 @@ import RefereeHeader from "./refereeheader";
 var React = require('react');
 import {SearchBar,NavBar,List,InputItem,TextareaItem} from 'antd-mobile';
 import { Form, Icon,Button, Input,Select,Radio} from 'antd';
-import MangerHeader from './manger_header';
 const FormItem = Form.Item;
 const Item = List.Item;
 import '../public/css/managerrecharge.css';
@@ -107,7 +106,10 @@ class RefereeRecharge extends React.Component{
                         </Item>
                     </Form>
                 </List>
-                <Button type="primary"  size="large" style={{width:'100%'}}>确认充值</Button>
+                <div style={{textAlign:'center'}}>
+                <div style={{display:'inline-block',width:'50%'}}><Button type="primary" style={{width:'80px',display:'inline-block',height:'35px',fontSize:'14px',verticalAlign:'middle',lineHeight:'35px'}}>退出</Button></div>
+                <div style={{display:'inline-block',width:'50%'}}><Button type="primary" style={{width:'80px',display:'inline-block',height:'35px',fontSize:'14px',verticalAlign:'middle',lineHeight:'35px'}}>确定</Button></div>
+                </div>
             </div>
         );
     };

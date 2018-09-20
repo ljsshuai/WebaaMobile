@@ -64,7 +64,7 @@ class Referrerlogs extends React.Component {
 
         return(
             <div>
-                <AccountsHeader title="推荐人账目记录"/>
+                <AccountsHeader title="玩家兑换记录"/>
                 <div className="accountsTitSeclect ReferrerLogs">
                     <div>
                         <span>选择类型</span>
@@ -102,7 +102,6 @@ class Referrerlogs extends React.Component {
                         </ul>
                     </Item>
                 </List>
-
             </div>
         )
     }

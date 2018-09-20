@@ -32,7 +32,7 @@ class AccountsHeader extends React.Component{
                 <NavBar
                     mode="dark"
                     icon={<Icon type="left" />}
-                    onLeftClick={()=>{this.props.url?this.props.history.push("/list"):this.props.history.push("/accounts")}}
+                    onLeftClick={()=>{this.props.url?this.props.history.push("/list"):this.props.history.push("/list")}}
                     rightContent={[
                         this.props.btn?<Button type="primary"  onClick={this.onClickDel.bind(this)} className="accountHeaderBtn" inline size="small"  >账目清零</Button>:null,
                     ]}

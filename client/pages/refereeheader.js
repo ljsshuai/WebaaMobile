@@ -10,10 +10,8 @@ class MangerHeader extends React.Component{
             <div>
                 <NavBar
                     mode="dark"
-                    icon={<Icon type="left" />}
-                    rightContent={<Icon onClick={()=>{this.props.history.push("/manger/refereeadd")}} type="ellipsis"/>}
-                    onLeftClick={()=>{this.props.url?this.props.history.push("/list"):this.props.history.push("/managerreferee")}}
-                >推荐人管理</NavBar>
+                    rightContent={<Button type="warning" style={{height:'34px',lineHeight:'34px',width:'60px',fontSize:'13px',background:'#87cff7'}}>刷新</Button>}
+                >Reference</NavBar>
             </div>
         );
     };
